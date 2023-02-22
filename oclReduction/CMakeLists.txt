@@ -16,12 +16,12 @@ project (OpenCL_Example)
 set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/")
  
 find_package( OpenCL REQUIRED )
-find_package( OpenGL REQUIRED )
-find_package( GLUT REQUIRED )
-find_package( GLEW REQUIRED )
+#find_package( OpenGL REQUIRED )
+#find_package( GLUT REQUIRED )
+#find_package( GLEW REQUIRED )
 
 include_directories( ${OPENCL_INCLUDE_DIR} )
-include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} )
+#include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} )
 include_directories( include )
 
 # Source code of application		
@@ -37,8 +37,9 @@ if (CMAKE_COMPILER_IS_GNUCC)
 	endif ()
 endif (CMAKE_COMPILER_IS_GNUCC)
 
-set(GLLIBS ${GLEW_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} )
+#set(GLLIBS ${GLEW_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} )
  
 # Set up executable
 add_executable (opencl_example ${opencl_example_src})
-target_link_libraries(opencl_example ${GLLIBS} ${OPENCL_LIBRARIES})
+target_link_libraries(opencl_example ${OPENCL_LIBRARIES})
+#target_link_libraries(opencl_example ${GLLIBS} ${OPENCL_LIBRARIES})
