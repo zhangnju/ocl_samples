@@ -1,0 +1,53 @@
+clGetPlatformID...
+Get the Device info and select Device...
+  # of Devices Available = 2
+  Using Device 0: Tesla T4
+  # of Compute Units = 40
+./build/opencl_example Starting...
+
+Initializing data...
+Initializing OpenCL...
+Allocating OpenCL memory...
+
+
+Initializing 64-bin OpenCL histogram...
+...loading Histogram64.cl from file
+...creating histogram64 program
+...building histogram64 program
+...creating histogram64 kernels
+...allocating internal histogram64 buffer
+
+Writing ptx to separate file: Histogram64.ptx ...
+
+Running 64-bin OpenCL histogram for 67108864 bytes...
+
+Validating 64-bin histogram OpenCL results...
+ ...reading back OpenCL results
+ ...histogram64CPU()
+ ...comparing the results
+ ...64-bin histograms match
+
+Shutting down 64-bin OpenCL histogram
+
+
+Initializing 256-bin OpenCL histogram...
+...loading Histogram256.cl
+...creating histogram256 program
+...building histogram256 program
+...creating histogram256 kernels
+...allocating internal histogram256 buffer
+
+Writing ptx to separate file: Histogram256.ptx ...
+
+Running 256-bin OpenCL histogram for 67108864 bytes...
+
+Validating 256-bin histogram OpenCL results...
+ ...reading back OpenCL results
+ ...histogram256CPU()
+ ...comparing the results
+ ...256-bin histograms match
+
+Shutting down 256-bin OpenCL histogram
+
+
+Shutting down...
